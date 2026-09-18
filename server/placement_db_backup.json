@@ -1,0 +1,661 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin459@sanjaygandhi.com",
+      "password": "Admin@459",
+      "name": "Admin",
+      "role": "admin",
+      "college": "Sanjay Gandhi Group of Institutions",
+      "phone": "+91 9876543210",
+      "created_at": "2026-09-18T16:49:17.557Z"
+    },
+    {
+      "id": 2,
+      "email": "admin@edubridge.gov.in",
+      "password": "admin123",
+      "name": "National Directorate Admin",
+      "role": "admin",
+      "college": "Apex Skill Directorate, New Delhi",
+      "phone": "+91 1123456789",
+      "created_at": "2026-09-18T16:49:17.562Z"
+    },
+    {
+      "id": 3,
+      "email": "aryan.sharma@college.edu.in",
+      "password": "student123",
+      "name": "Aryan Sharma",
+      "role": "student",
+      "college": "All India Institute of Technology & Ayurveda Sciences, New Delhi",
+      "phone": "+91 9876500001",
+      "created_at": "2026-09-18T16:49:17.562Z"
+    },
+    {
+      "id": 4,
+      "email": "recruitment@apollo-tech.com",
+      "password": "industry123",
+      "name": "Suresh Narayanan",
+      "role": "industry",
+      "college": "Apollo TeleHealth & Healthcare AI Labs",
+      "phone": "+91 9876500002",
+      "created_at": "2026-09-18T16:49:17.562Z"
+    },
+    {
+      "id": 5,
+      "email": "tpo@university.ac.in",
+      "password": "academia123",
+      "name": "Prof. Radhika Rao",
+      "role": "academia",
+      "college": "All India Institute of Technology & Ayurveda Sciences",
+      "phone": "+91 9876500003",
+      "created_at": "2026-09-18T16:49:17.562Z"
+    },
+    {
+      "id": 1789750379061,
+      "email": "test.student@univ.ac.in",
+      "password": "mypassword123",
+      "name": "Rohan Sharma",
+      "role": "student",
+      "college": "IIT Delhi",
+      "phone": "9876543210",
+      "created_at": "2026-09-18T16:52:59.061Z"
+    },
+    {
+      "id": 1789750379062,
+      "email": "divya.nair@ayush.gov.in",
+      "password": "ayushPassword2026",
+      "name": "Dr. Divya Nair",
+      "role": "industry",
+      "college": "AIIA Research Hub",
+      "phone": "+91 9988776655",
+      "created_at": "2026-09-18T16:55:51.639Z"
+    }
+  ],
+  "studentProfile": {
+    "id": "std-2026-001",
+    "user_id": 3,
+    "name": "Aryan Sharma",
+    "rollNo": "22BCS1084",
+    "college": "All India Institute of Technology & Ayurveda Sciences, New Delhi",
+    "department": "Computer Science & Biomedical Informatics",
+    "semester": "7th Semester (Final Year)",
+    "cgpa": 8.84,
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    "readinessScore": 88,
+    "nepCredits": 150,
+    "verifiedBadgesCount": 6,
+    "skills": [
+      {
+        "name": "Python",
+        "category": "Programming",
+        "level": 90,
+        "verified": true,
+        "source": "NPTEL Gold"
+      },
+      {
+        "name": "React.js",
+        "category": "Frontend",
+        "level": 85,
+        "verified": true,
+        "source": "Industry Capstone"
+      },
+      {
+        "name": "Node.js & Express",
+        "category": "Backend",
+        "level": 78,
+        "verified": true,
+        "source": "Lab Evaluation"
+      },
+      {
+        "name": "Ayush Data Informatics",
+        "category": "Domain",
+        "level": 95,
+        "verified": true,
+        "source": "AIIA Research Lab"
+      },
+      {
+        "name": "Machine Learning (Scikit-Learn)",
+        "category": "AI/ML",
+        "level": 72,
+        "verified": true,
+        "source": "Coursera / IITM"
+      },
+      {
+        "name": "SQL & PostgreSQL",
+        "category": "Database",
+        "level": 82,
+        "verified": true,
+        "source": "College Assessment"
+      },
+      {
+        "name": "Docker & Containerization",
+        "category": "DevOps",
+        "level": 50,
+        "verified": false,
+        "source": "Self-Study"
+      },
+      {
+        "name": "Clinical Data Standards (CDISC/FHIR)",
+        "category": "Domain",
+        "level": 60,
+        "verified": true,
+        "source": "Workshop"
+      },
+      {
+        "name": "Cloud Architecture (AWS)",
+        "category": "Cloud",
+        "level": 45,
+        "verified": false,
+        "source": "In-Progress"
+      }
+    ],
+    "certifications": [
+      {
+        "id": "c1",
+        "title": "Ayush Health Informatics & AI Analytics",
+        "issuer": "Ministry of Ayush & AIIA",
+        "date": "Aug 2026",
+        "credentialId": "AYU-AI-8892-IN",
+        "verified": true
+      },
+      {
+        "id": "c2",
+        "title": "Full Stack Cloud Development Professional",
+        "issuer": "IBM / AICTE Digital Skill Initiative",
+        "date": "May 2026",
+        "credentialId": "IBM-CS-99120",
+        "verified": true
+      },
+      {
+        "id": "c3",
+        "title": "Data Science with Python & Biomedical ML",
+        "issuer": "NPTEL (IIT Madras)",
+        "date": "Jan 2026",
+        "credentialId": "NPTEL26CS44",
+        "verified": true
+      }
+    ],
+    "projects": [
+      {
+        "title": "AyurHerb-AI: Automated Medicinal Herb Recognition System",
+        "description": "Computer vision and NLP platform mapping traditional Ayurvedic botanical traits to modern pharmacopeia taxonomies using deep learning.",
+        "techStack": [
+          "Python",
+          "TensorFlow",
+          "FastAPI",
+          "React"
+        ],
+        "industryPartner": "Himalaya Wellness & CCRAS",
+        "verified": true
+      },
+      {
+        "title": "CampusCare: Tele-consultation & Clinical Trial Scheduler",
+        "description": "HIPAA/ABDM compliant hospital triage system connecting academic clinics with rural health centers.",
+        "techStack": [
+          "React.js",
+          "Node.js",
+          "PostgreSQL",
+          "Tailwind"
+        ],
+        "industryPartner": "Apollo TeleHealth MoU",
+        "verified": true
+      }
+    ]
+  },
+  "internships": [
+    {
+      "id": "job-1789750379079",
+      "company": "Biocon Biologics",
+      "title": "Biomedical AI Research Intern",
+      "location": "Bengaluru (Hybrid)",
+      "stipend": "₹35,000 / month",
+      "duration": "6 Months",
+      "type": "Placement Pre-Offer (PPO)",
+      "openings": 5,
+      "deadline": "30 Nov 2026",
+      "tags": [
+        "Python",
+        "Biomedical AI",
+        "SQL"
+      ],
+      "requirements": [
+        "Python",
+        "Biomedical AI",
+        "SQL"
+      ],
+      "description": "Research intern for molecular modeling.",
+      "featured": false,
+      "hiringBatch": "2026 Batch",
+      "partnerMoU": "AICTE / Industry Partner",
+      "matchScore": 85,
+      "created_at": "2026-09-18T16:52:59.079Z"
+    },
+    {
+      "id": "job-101",
+      "company": "All India Institute of Ayurveda (AIIA)",
+      "title": "Ayush Informatics & Herbal Big-Data Intern",
+      "location": "New Delhi (Hybrid)",
+      "stipend": "₹25,000 / month",
+      "duration": "6 Months",
+      "type": "Research & Placement Track",
+      "openings": 8,
+      "deadline": "30 Sept 2026",
+      "tags": [
+        "Ayush Domain",
+        "Python",
+        "Machine Learning",
+        "Research"
+      ],
+      "matchScore": 92,
+      "description": "Work under senior scientists at AIIA to develop national botanical AI classification models and validate Ayurvedic clinical datasets.",
+      "requirements": [
+        "Python",
+        "Ayush Data Informatics",
+        "Machine Learning (Scikit-Learn)",
+        "SQL & PostgreSQL"
+      ],
+      "featured": true,
+      "hiringBatch": "2026 & 2027",
+      "partnerMoU": "Ministry of Ayush / AICTE Co-Funded",
+      "created_at": "2026-09-18T16:49:17.562Z"
+    },
+    {
+      "id": "job-102",
+      "company": "Tata Consultancy Services (TCS Digital Labs)",
+      "title": "Full-Stack Enterprise Cloud Engineer Intern",
+      "location": "Bengaluru / Pune (Hybrid)",
+      "stipend": "₹32,000 / month",
+      "duration": "6 Months PPO",
+      "type": "Placement Pre-Offer",
+      "openings": 25,
+      "deadline": "05 Oct 2026",
+      "tags": [
+        "React.js",
+        "Node.js",
+        "PostgreSQL",
+        "Cloud"
+      ],
+      "matchScore": 86,
+      "description": "Develop enterprise next-gen portals for banking and healthcare clients. Opportunity for direct PPO at 9.0 LPA upon milestone completion.",
+      "requirements": [
+        "React.js",
+        "Node.js & Express",
+        "SQL & PostgreSQL",
+        "Docker & Containerization"
+      ],
+      "featured": true,
+      "hiringBatch": "2026 Batch",
+      "partnerMoU": "TCS Academic Interface Program (AIP)",
+      "created_at": "2026-09-18T16:49:17.562Z"
+    },
+    {
+      "id": "job-103",
+      "company": "Himalaya Wellness & Bio-Tech Innovations",
+      "title": "Pharmacovigilance & Herbal Formulations Analyst",
+      "location": "Bengaluru (On-site)",
+      "stipend": "₹22,000 / month",
+      "duration": "4 Months",
+      "type": "Industrial Internship",
+      "openings": 6,
+      "deadline": "12 Oct 2026",
+      "tags": [
+        "Data Analytics",
+        "Ayush Domain",
+        "Python"
+      ],
+      "matchScore": 81,
+      "description": "Analyze clinical trial feedback on herbal remedies and automate batch formulation variance testing using data processing pipelines.",
+      "requirements": [
+        "Python",
+        "SQL & PostgreSQL",
+        "Ayush Data Informatics"
+      ],
+      "featured": false,
+      "hiringBatch": "Final & Pre-Final Year",
+      "partnerMoU": "Active College MoU (Since 2024)",
+      "created_at": "2026-09-18T16:49:17.562Z"
+    },
+    {
+      "id": "job-104",
+      "company": "Apollo TeleHealth Technologies",
+      "title": "Clinical IoT & Healthcare Platform Developer",
+      "location": "Hyderabad (Remote-friendly)",
+      "stipend": "₹28,000 / month",
+      "duration": "6 Months",
+      "type": "Placement Track",
+      "openings": 12,
+      "deadline": "20 Oct 2026",
+      "tags": [
+        "React.js",
+        "Cloud Architecture",
+        "FHIR Standards"
+      ],
+      "matchScore": 74,
+      "description": "Build doctor-facing dashboards and telemedicine streaming gateways aligned with Ayushman Bharat Digital Mission (ABDM).",
+      "requirements": [
+        "React.js",
+        "Node.js & Express",
+        "Clinical Data Standards (CDISC/FHIR)",
+        "Cloud Architecture (AWS)"
+      ],
+      "featured": false,
+      "hiringBatch": "2026 Passouts",
+      "partnerMoU": "National Healthcare Skills Council",
+      "created_at": "2026-09-18T16:49:17.562Z"
+    },
+    {
+      "id": "job-105",
+      "company": "Infosys Springboard AI Lab",
+      "title": "AI Solutions & Knowledge Graph Intern",
+      "location": "Mysuru / Remote",
+      "stipend": "₹30,000 / month",
+      "duration": "6 Months",
+      "type": "Research & Capstone",
+      "openings": 15,
+      "deadline": "25 Oct 2026",
+      "tags": [
+        "Python",
+        "Machine Learning",
+        "Graph DB"
+      ],
+      "matchScore": 88,
+      "description": "Construct knowledge graphs mapping traditional Sanskrit herbal manuscripts to modern botanical scientific names.",
+      "requirements": [
+        "Python",
+        "Machine Learning (Scikit-Learn)",
+        "SQL & PostgreSQL"
+      ],
+      "featured": true,
+      "hiringBatch": "All Engg & Science",
+      "partnerMoU": "Infosys Campus Connect Hub",
+      "created_at": "2026-09-18T16:49:17.562Z"
+    }
+  ],
+  "applications": [
+    {
+      "id": "app-1789750551645",
+      "jobId": "job-103",
+      "student_id": "std-2026-001",
+      "student_name": "Aryan Sharma",
+      "student_email": "aryan.sharma@college.edu.in",
+      "company": "Himalaya Wellness & Bio-Tech Innovations",
+      "title": "Pharmacovigilance & Herbal Formulations Analyst",
+      "appliedDate": "Today (Just now)",
+      "status": "Application Submitted",
+      "stage": 1,
+      "nextStep": "Candidate skill compatibility verification in progress",
+      "matchScore": 85,
+      "created_at": "2026-09-18T16:55:51.645Z"
+    },
+    {
+      "id": "app-1789750379098",
+      "jobId": "job-101",
+      "student_id": "std-2026-001",
+      "student_name": "Aryan Sharma",
+      "student_email": "aryan.sharma@college.edu.in",
+      "company": "All India Institute of Ayurveda (AIIA)",
+      "title": "Ayush Informatics & Herbal Big-Data Intern",
+      "appliedDate": "Today (Just now)",
+      "status": "Application Submitted",
+      "stage": 1,
+      "nextStep": "Candidate skill compatibility verification in progress",
+      "matchScore": 85,
+      "created_at": "2026-09-18T16:52:59.098Z"
+    },
+    {
+      "id": "app-301",
+      "jobId": "job-101",
+      "student_id": "std-2026-001",
+      "student_name": "Aryan Sharma",
+      "student_email": "aryan.sharma@college.edu.in",
+      "company": "All India Institute of Ayurveda (AIIA)",
+      "title": "Ayush Informatics & Herbal Big-Data Intern",
+      "appliedDate": "14 Sept 2026",
+      "status": "Shortlisted for Interview",
+      "stage": 2,
+      "nextStep": "Technical Interview on Sept 22, 2026 at 11:30 AM IST",
+      "matchScore": 92,
+      "created_at": "2026-09-18T16:49:17.562Z"
+    },
+    {
+      "id": "app-302",
+      "jobId": "job-102",
+      "student_id": "std-2026-001",
+      "student_name": "Aryan Sharma",
+      "student_email": "aryan.sharma@college.edu.in",
+      "company": "Tata Consultancy Services (TCS Digital Labs)",
+      "title": "Full-Stack Enterprise Cloud Engineer Intern",
+      "appliedDate": "02 Sept 2026",
+      "status": "Application Submitted",
+      "stage": 1,
+      "nextStep": "Resume and ATS screening under evaluation",
+      "matchScore": 86,
+      "created_at": "2026-09-18T16:49:17.562Z"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "cand-01",
+      "name": "Aryan Sharma",
+      "degree": "B.Tech Computer Science & Bio-Informatics",
+      "college": "AIIA New Delhi",
+      "cgpa": 8.84,
+      "nepCredits": 148,
+      "topSkills": [
+        "Python (90%)",
+        "React.js (85%)",
+        "Ayush Informatics (75%)",
+        "SQL (82%)"
+      ],
+      "matchWithActiveJob": 94,
+      "status": "Shortlisted",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "cand-02",
+      "name": "Pooja Verma",
+      "degree": "B.Tech Biotechnology & Data Analytics",
+      "college": "Delhi Technological University (DTU)",
+      "cgpa": 9.12,
+      "nepCredits": 154,
+      "topSkills": [
+        "Python (85%)",
+        "Bio-Statistics (90%)",
+        "Clinical Data (80%)"
+      ],
+      "matchWithActiveJob": 91,
+      "status": "Interview Scheduled",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "cand-03",
+      "name": "Devendra Kulkarni",
+      "degree": "B.Tech Electronics & Embedded Systems",
+      "college": "IIT Roorkee",
+      "cgpa": 8.65,
+      "nepCredits": 142,
+      "topSkills": [
+        "IoT Sensors (88%)",
+        "C++ (92%)",
+        "Python (75%)"
+      ],
+      "matchWithActiveJob": 82,
+      "status": "Under Review",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "cand-04",
+      "name": "Ananya Deshmukh",
+      "degree": "B.Tech Artificial Intelligence & ML",
+      "college": "IIIT Hyderabad",
+      "cgpa": 9.4,
+      "nepCredits": 160,
+      "topSkills": [
+        "PyTorch (95%)",
+        "Deep Learning (92%)",
+        "NLP (88%)"
+      ],
+      "matchWithActiveJob": 96,
+      "status": "Shortlisted",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80"
+    }
+  ],
+  "capstones": [
+    {
+      "id": "cap-201",
+      "title": "Automated CDISC & FHIR Medical Terminology Mapping using LLMs",
+      "company": "Apollo TeleHealth & ABDM Sandbox",
+      "stipend": "₹1,50,000 Team Sponsorship",
+      "duration": "4 Months (Final Year)",
+      "difficulty": "Advanced",
+      "teamsEnrolled": 14,
+      "tags": [
+        "Healthcare AI",
+        "NLP",
+        "FHIR Standards",
+        "Python"
+      ],
+      "mentor": "Dr. Vikramaditya (Director, Healthcare Analytics, Apollo)",
+      "status": "Accepting Student Teams"
+    },
+    {
+      "id": "cap-202",
+      "title": "Ayush Pharmacopeia Knowledge Graph & Botanical Image Segmentation",
+      "company": "Ministry of Ayush & CCRAS",
+      "stipend": "₹2,00,000 Govt Grant",
+      "duration": "6 Months (Joint Lab)",
+      "difficulty": "Intermediate",
+      "teamsEnrolled": 22,
+      "tags": [
+        "Computer Vision",
+        "Ayush Domain",
+        "Knowledge Graphs"
+      ],
+      "mentor": "Prof. K. S. Murthy (Chief Scientist, CCRAS)",
+      "status": "Accepting Student Teams"
+    },
+    {
+      "id": "cap-203",
+      "title": "Scalable Hospital Inpatient Registry Telemetry with Docker & Kafka",
+      "company": "TCS Healthcare Technology Practice",
+      "stipend": "₹1,20,000 + PPO Opportunity",
+      "duration": "4 Months",
+      "difficulty": "Advanced",
+      "teamsEnrolled": 8,
+      "tags": [
+        "Cloud DevOps",
+        "Docker",
+        "Distributed Systems"
+      ],
+      "mentor": "Sunil Shenoy (Principal Architect, TCS Digital)",
+      "status": "Active Evaluation"
+    }
+  ],
+  "mous": [
+    {
+      "id": "mou-1",
+      "partner": "All India Institute of Ayurveda (AIIA)",
+      "scope": "Joint R&D Lab in Herbal AI, 20 Annual Paid Internships, and Faculty Exchange",
+      "signedDate": "Jan 2024",
+      "validUntil": "Dec 2028",
+      "status": "Active & Legally Verified"
+    },
+    {
+      "id": "mou-2",
+      "partner": "Tata Consultancy Services (TCS AIP)",
+      "scope": "Curriculum co-design for Cloud & AI electives, Campus Hackathons, 50 PPOs/year",
+      "signedDate": "Aug 2023",
+      "validUntil": "July 2027",
+      "status": "Active & Legally Verified"
+    },
+    {
+      "id": "mou-3",
+      "partner": "Apollo TeleHealth Ltd.",
+      "scope": "Biomedical Informatics student training, ABDM Sandbox project mentorship",
+      "signedDate": "March 2024",
+      "validUntil": "Feb 2029",
+      "status": "Active & Legally Verified"
+    },
+    {
+      "id": "mou-4",
+      "partner": "Himalaya Wellness Company",
+      "scope": "Botanical research dataset sponsorship, Herbal pharmacology internships",
+      "signedDate": "Nov 2024",
+      "validUntil": "Oct 2027",
+      "status": "Active & Legally Verified"
+    }
+  ],
+  "mentors": [
+    {
+      "id": "m-1",
+      "name": "Dr. Vikramaditya Sengupta",
+      "role": "Head of Biomedical AI & Healthtech",
+      "company": "Apollo TeleHealth MoU Partner",
+      "rating": 4.9,
+      "sessionsConducted": 48,
+      "domains": [
+        "Biomedical Informatics",
+        "FHIR / CDISC Standards",
+        "Machine Learning"
+      ],
+      "availableSlots": "Tuesday & Thursday (6:00 PM - 8:00 PM IST)",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "m-2",
+      "name": "Dr. Ananya Deshpande",
+      "role": "Chief Botanical Data Scientist",
+      "company": "AIIA & Ministry of Ayush Lab",
+      "rating": 5,
+      "sessionsConducted": 62,
+      "domains": [
+        "Ayush Formulation AI",
+        "Computer Vision in Herbs",
+        "Python ML"
+      ],
+      "availableSlots": "Wednesday & Saturday (4:00 PM - 6:00 PM IST)",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "m-3",
+      "name": "Sunil Shenoy",
+      "role": "Principal Cloud Architect",
+      "company": "TCS Digital Enterprise Practice",
+      "rating": 4.8,
+      "sessionsConducted": 95,
+      "domains": [
+        "Enterprise Cloud",
+        "React & Node.js Architecture",
+        "Docker & Kubernetes"
+      ],
+      "availableSlots": "Monday & Friday (7:00 PM - 9:00 PM IST)",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80"
+    }
+  ],
+  "curriculumGaps": [
+    {
+      "id": "gap-1",
+      "courseSubject": "CS-402: Database Management & Health Data Systems",
+      "gapDeficitPercent": 42,
+      "syllabusCoverage": "Standard Relational Algebra, SQL Normalization (3NF/BCNF), Relational Indexes.",
+      "industryDemand": "Modern Industry Requires: ABDM FHIR 4.0 JSON schemas, graph databases (Neo4j) for herbal taxonomy, and HIPAA/DISHA data encryption at rest.",
+      "recommendedBridgeAction": "Incorporate Swayam 4-Week Module on FHIR Health Data Interoperability"
+    },
+    {
+      "id": "gap-2",
+      "courseSubject": "AI-501: Machine Learning & Botanical Informatics",
+      "gapDeficitPercent": 35,
+      "syllabusCoverage": "Linear Regression, Decision Trees, K-Means Clustering on synthetic datasets.",
+      "industryDemand": "Modern Industry Requires: Pre-trained Transformer embeddings, IMPPAT botanical database integration, and multi-modal computer vision for herbal organoleptic validation.",
+      "recommendedBridgeAction": "Adopt AICTE Model Curriculum Lab on Ayurvedic Phytochemistry Machine Learning"
+    },
+    {
+      "id": "gap-3",
+      "courseSubject": "IT-304: Web Engineering & Microservices",
+      "gapDeficitPercent": 28,
+      "syllabusCoverage": "Monolithic PHP/JSP web architectures, XML Web Services, Apache HTTP Server.",
+      "industryDemand": "Modern Industry Requires: React 19 single-page apps, FastAPI/Node.js event-driven microservices, Docker containerization, and AWS serverless deployment.",
+      "recommendedBridgeAction": "Mandate Infosys Springboard Cloud Microservices Certification for 6th Sem"
+    }
+  ]
+}

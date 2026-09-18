@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import {
-  BrainCircuit,
-  CheckCircle2,
-  AlertCircle,
   Award,
-  Sparkles,
   ArrowRight,
   RotateCcw,
   Check,
@@ -13,7 +9,7 @@ import {
 } from 'lucide-react';
 
 export const SkillAssessment = () => {
-  const { studentProfile, setStudentProfile, showToast, setActiveTab } = useApp();
+  const { setStudentProfile, recordAssessmentResult, showToast } = useApp();
 
   const questions = [
     {
@@ -88,19 +84,36 @@ export const SkillAssessment = () => {
     });
 
     if (score >= 2) {
-      // Award verified badge
-      setStudentProfile(prev => ({
-        ...prev,
-        readinessScore: Math.min(100, prev.readinessScore + 4),
-        nepCredits: prev.nepCredits + 2,
-        skills: prev.skills.map(s =>
-          s.name.includes("Clinical Data") || s.name.includes("Ayush")
-            ? { ...s, level: Math.min(100, s.level + 20), verified: true }
-            : s
-        )
-      }));
+      if (recordAssessmentResult) {
+        recordAssessmentResult({
+          score,
+          totalQuestions: questions.length,
+          passed: true,
+          quizTitle: 'Adaptive Technical Competency Assessment'
+        });
+      } else {
+        // Fallback local award verified badge
+        setStudentProfile(prev => ({
+          ...prev,
+          readinessScore: Math.min(100, prev.readinessScore + 4),
+          nepCredits: prev.nepCredits + 2,
+          skills: prev.skills.map(s =>
+            s.name.includes("Clinical Data") || s.name.includes("Ayush")
+              ? { ...s, level: Math.min(100, s.level + 20), verified: true }
+              : s
+          )
+        }));
+      }
       showToast(`Passed with ${score}/${questions.length}! Conferred Verified Ayush Informatics Gold Credential (+2 ABC Credits).`, 'success');
     } else {
+      if (recordAssessmentResult) {
+        recordAssessmentResult({
+          score,
+          totalQuestions: questions.length,
+          passed: false,
+          quizTitle: 'Adaptive Technical Competency Assessment'
+        });
+      }
       showToast(`Score: ${score}/${questions.length}. Review the explanations and retake to earn your verified badge.`, 'warning');
     }
   };
@@ -112,9 +125,6 @@ export const SkillAssessment = () => {
   };
 
   const currentQ = questions[currentIdx];
-  const totalScore = Object.keys(selectedAnswers).reduce((acc, idx) => {
-    return acc + (selectedAnswers[idx] === questions[idx].correct ? 1 : 0);
-  }, 0);
 
   return (
     <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>

@@ -9,8 +9,7 @@ import {
   Bell,
   X,
   Menu,
-  LogOut,
-  User
+  LogOut
 } from 'lucide-react';
 
 export const Navbar = () => {
@@ -18,28 +17,29 @@ export const Navbar = () => {
   const [notificationsOpen, setNotificationsOpen] = useState(false);
 
   const getRoleUserDisplay = () => {
+    const isCustomUser = loggedInUser && loggedInUser.name;
     switch (currentRole) {
       case 'student':
         return {
-          name: loggedInUser?.name || studentProfile.name,
-          role: "B.Tech Final Year • AIIA New Delhi",
-          avatar: studentProfile.avatar
+          name: isCustomUser ? loggedInUser.name : studentProfile.name,
+          role: loggedInUser?.college || studentProfile.college || "B.Tech Final Year • AIIA New Delhi",
+          avatar: studentProfile.avatar || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
         };
       case 'industry':
         return {
-          name: loggedInUser?.name || "Suresh Narayanan",
-          role: "VP Engineering & Campus Head • Apollo & AIIA",
+          name: isCustomUser ? loggedInUser.name : "Suresh Narayanan",
+          role: loggedInUser?.college ? `Hiring Lead • ${loggedInUser.college}` : "VP Engineering & Campus Head • Apollo & AIIA",
           avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
         };
       case 'academia':
         return {
-          name: loggedInUser?.name || "Prof. Radhika Rao",
-          role: "Dean & Head TPO • All India Institute of Tech",
+          name: isCustomUser ? loggedInUser.name : "Prof. Radhika Rao",
+          role: loggedInUser?.college ? `Dean / TPO • ${loggedInUser.college}` : "Dean & Head TPO • All India Institute of Tech",
           avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
         };
       case 'national':
         return {
-          name: loggedInUser?.isAdmin ? "Admin Panel" : "National Skills Directorate",
+          name: isCustomUser ? loggedInUser.name : "Apex National Administrator",
           role: "Apex Monitoring • AICTE & Ministry of Ayush",
           avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80"
         };
@@ -49,6 +49,7 @@ export const Navbar = () => {
   };
 
   const userDisplay = getRoleUserDisplay();
+  const isAdminUser = Boolean(loggedInUser?.isAdmin || loggedInUser?.role === 'admin' || loggedInUser?.role === 'national');
 
   return (
     <header className="main-navbar">
@@ -73,45 +74,84 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Central Simulated Role Selector - Desktop */}
+        {/* Central Role Header / Persona Badge - Desktop */}
         <div className="navbar-role-center hide-mobile">
-          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>
-            Simulate Persona (District Level Evaluation)
-          </div>
-          <div className="role-pill-bar">
-            <button
-              className={`role-pill-btn ${currentRole === 'student' ? 'active' : ''}`}
-              onClick={() => setCurrentRole('student')}
-              title="View as Student"
-            >
-              <GraduationCap size={15} />
-              <span>Student</span>
-            </button>
-            <button
-              className={`role-pill-btn ${currentRole === 'industry' ? 'active' : ''}`}
-              onClick={() => setCurrentRole('industry')}
-              title="View as Industry Recruiter"
-            >
-              <Building2 size={15} />
-              <span>Industry</span>
-            </button>
-            <button
-              className={`role-pill-btn ${currentRole === 'academia' ? 'active' : ''}`}
-              onClick={() => setCurrentRole('academia')}
-              title="View as College TPO / Dean"
-            >
-              <School size={15} />
-              <span>Academia</span>
-            </button>
-            <button
-              className={`role-pill-btn ${currentRole === 'national' ? 'active' : ''}`}
-              onClick={() => setCurrentRole('national')}
-              title="View as Apex / Ministry"
-            >
-              <Globe2 size={15} />
-              <span>Apex</span>
-            </button>
-          </div>
+          {isAdminUser ? (
+            <>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>
+                Apex Admin Persona Control
+              </div>
+              <div className="role-pill-bar">
+                <button
+                  className={`role-pill-btn ${currentRole === 'national' ? 'active' : ''}`}
+                  onClick={() => setCurrentRole('national')}
+                  title="View as Apex / Ministry"
+                >
+                  <Globe2 size={15} />
+                  <span>Apex Directorate</span>
+                </button>
+                <button
+                  className={`role-pill-btn ${currentRole === 'student' ? 'active' : ''}`}
+                  onClick={() => setCurrentRole('student')}
+                  title="View as Student"
+                >
+                  <GraduationCap size={15} />
+                  <span>Student</span>
+                </button>
+                <button
+                  className={`role-pill-btn ${currentRole === 'industry' ? 'active' : ''}`}
+                  onClick={() => setCurrentRole('industry')}
+                  title="View as Industry Recruiter"
+                >
+                  <Building2 size={15} />
+                  <span>Industry</span>
+                </button>
+                <button
+                  className={`role-pill-btn ${currentRole === 'academia' ? 'active' : ''}`}
+                  onClick={() => setCurrentRole('academia')}
+                  title="View as College TPO / Dean"
+                >
+                  <School size={15} />
+                  <span>Academia</span>
+                </button>
+              </div>
+            </>
+          ) : (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              {currentRole === 'student' && (
+                <div
+                  className="badge badge-indigo"
+                  style={{ padding: '8px 16px', fontSize: '0.85rem', fontWeight: 700, gap: '8px', boxShadow: '0 4px 16px rgba(99, 102, 241, 0.2)' }}
+                >
+                  <GraduationCap size={17} /> Student & Graduate Career Portal
+                </div>
+              )}
+              {currentRole === 'industry' && (
+                <div
+                  className="badge badge-cyan"
+                  style={{ padding: '8px 16px', fontSize: '0.85rem', fontWeight: 700, gap: '8px', boxShadow: '0 4px 16px rgba(6, 182, 212, 0.2)' }}
+                >
+                  <Building2 size={17} /> Enterprise Recruiter & Talent Portal
+                </div>
+              )}
+              {currentRole === 'academia' && (
+                <div
+                  className="badge badge-emerald"
+                  style={{ padding: '8px 16px', fontSize: '0.85rem', fontWeight: 700, gap: '8px', boxShadow: '0 4px 16px rgba(16, 185, 129, 0.2)' }}
+                >
+                  <School size={17} /> Higher Education & TPO Institutional Portal
+                </div>
+              )}
+              {currentRole === 'national' && (
+                <div
+                  className="badge badge-amber"
+                  style={{ padding: '8px 16px', fontSize: '0.85rem', fontWeight: 700, gap: '8px', boxShadow: '0 4px 16px rgba(245, 158, 11, 0.2)' }}
+                >
+                  <Globe2 size={17} /> Apex National Skill Directorate
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Right: User & Actions */}
@@ -227,27 +267,31 @@ export const Navbar = () => {
             </div>
           </div>
 
-          {/* Role Switcher */}
-          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 700, marginBottom: '8px' }}>
-            Switch Persona
-          </div>
-          <div className="mobile-role-grid">
-            {[
-              { key: 'student', Icon: GraduationCap, label: 'Student' },
-              { key: 'industry', Icon: Building2, label: 'Industry' },
-              { key: 'academia', Icon: School, label: 'Academia' },
-              { key: 'national', Icon: Globe2, label: 'Apex' },
-            ].map(r => (
-              <button
-                key={r.key}
-                className={`mobile-role-btn ${currentRole === r.key ? 'active' : ''}`}
-                onClick={() => setCurrentRole(r.key)}
-              >
-                <r.Icon size={16} />
-                {r.label}
-              </button>
-            ))}
-          </div>
+          {/* Role Switcher - Admin only */}
+          {isAdminUser && (
+            <>
+              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 700, marginBottom: '8px' }}>
+                Switch Persona
+              </div>
+              <div className="mobile-role-grid">
+                {[
+                  { key: 'national', Icon: Globe2, label: 'Apex' },
+                  { key: 'student', Icon: GraduationCap, label: 'Student' },
+                  { key: 'industry', Icon: Building2, label: 'Industry' },
+                  { key: 'academia', Icon: School, label: 'Academia' },
+                ].map(r => (
+                  <button
+                    key={r.key}
+                    className={`mobile-role-btn ${currentRole === r.key ? 'active' : ''}`}
+                    onClick={() => setCurrentRole(r.key)}
+                  >
+                    <r.Icon size={16} />
+                    {r.label}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
 
           <button
             className="btn btn-secondary"

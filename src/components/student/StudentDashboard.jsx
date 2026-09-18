@@ -66,7 +66,7 @@ export const StudentDashboard = () => {
               width: '64px',
               height: '64px',
               borderRadius: '50%',
-              background: 'conic-gradient(#10b981 0% 84%, rgba(255, 255, 255, 0.1) 84% 100%)',
+              background: `conic-gradient(#10b981 0% ${studentProfile.readinessScore || 84}%, rgba(255, 255, 255, 0.1) ${studentProfile.readinessScore || 84}% 100%)`,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -87,7 +87,7 @@ export const StudentDashboard = () => {
                 color: '#10b981'
               }}
             >
-              84%
+              {studentProfile.readinessScore || 84}%
             </div>
           </div>
           <div>

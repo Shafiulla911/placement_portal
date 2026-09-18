@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 export const Sidebar = () => {
-  const { currentRole, activeTab, setActiveTab, mobileMenuOpen } = useApp();
+  const { currentRole, activeTab, setActiveTab, mobileMenuOpen, internships, capstoneList, academiaData } = useApp();
 
   const navItemsByRole = {
     student: [
@@ -26,7 +26,7 @@ export const Sidebar = () => {
       { id: 'skill-gap', label: 'AI Skill-Gap Analyzer', icon: BrainCircuit, badge: 'AI Engine', highlight: true },
       { id: 'resume-parser', label: 'AI Resume & ATS Parser', icon: FileText, badge: 'Smart ATS' },
       { id: 'assessment', label: 'Skill Verification Quiz', icon: CheckCircle2, badge: 'Badges' },
-      { id: 'internships', label: 'Internships & Drives', icon: Briefcase, count: 5 },
+      { id: 'internships', label: 'Internships & Drives', icon: Briefcase, count: internships ? internships.length : 5 },
       { id: 'locker', label: 'NEP Digital Locker', icon: Award },
       { id: 'mentorship', label: '1:1 Expert Mentorship', icon: Users }
     ],
@@ -34,12 +34,12 @@ export const Sidebar = () => {
       { id: 'dashboard', label: 'Recruiter Dashboard', icon: LayoutDashboard },
       { id: 'candidates', label: 'AI Candidate Matcher', icon: Search, badge: 'Live Match', highlight: true },
       { id: 'post-job', label: 'Post Opportunity', icon: PlusCircle },
-      { id: 'capstone', label: 'Capstone Challenges', icon: FolderGit2, count: 3 }
+      { id: 'capstone', label: 'Capstone Challenges', icon: FolderGit2, count: capstoneList ? capstoneList.length : 3 }
     ],
     academia: [
       { id: 'dashboard', label: 'TPO Placement Analytics', icon: BarChart3 },
       { id: 'curriculum', label: 'Curriculum-Industry Gap', icon: BookOpenCheck, badge: 'AICTE', highlight: true },
-      { id: 'mous', label: 'Corporate MoUs & Tie-Ups', icon: Handshake, count: 4 },
+      { id: 'mous', label: 'Corporate MoUs & Tie-Ups', icon: Handshake, count: academiaData ? academiaData.activeMoUsCount : 4 },
       { id: 'students', label: 'Batch Readiness Cohort', icon: Users }
     ],
     national: [

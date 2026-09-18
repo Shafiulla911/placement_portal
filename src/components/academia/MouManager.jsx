@@ -11,8 +11,8 @@ import {
 } from 'lucide-react';
 
 export const MouManager = () => {
-  const { academiaData, showToast } = useApp();
-  const [mous, setMous] = useState(academiaData.activeMoUs);
+  const { academiaData, mousList, draftNewMou, showToast } = useApp();
+  const mous = mousList || academiaData.activeMoUs;
 
   // Modal States
   const [draftModalOpen, setDraftModalOpen] = useState(false);
@@ -37,8 +37,11 @@ export const MouManager = () => {
       status: "Active & Legally Verified"
     };
 
-    setMous(prev => [newMoU, ...prev]);
-    showToast(`MoU with "${draftForm.partner}" executed and registered on National AICTE Ledger!`, 'success');
+    if (draftNewMou) {
+      draftNewMou(newMoU);
+    } else {
+      showToast(`MoU with "${draftForm.partner}" executed and registered on National AICTE Ledger!`, 'success');
+    }
     setDraftModalOpen(false);
   };
 

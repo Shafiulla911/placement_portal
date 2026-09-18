@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export const CapstoneProjects = () => {
-  const { capstoneList, setCapstoneList, showToast } = useApp();
+  const { capstoneList, setCapstoneList, enrollCapstone, postNewCapstone, showToast } = useApp();
   const [filterDifficulty, setFilterDifficulty] = useState('all');
 
   // Modal States
@@ -51,11 +51,15 @@ export const CapstoneProjects = () => {
   const handleEnrollSubmit = (e) => {
     e.preventDefault();
     if (selectedCapstone) {
-      setCapstoneList(prev =>
-        prev.map(c =>
-          c.id === selectedCapstone.id ? { ...c, teamsEnrolled: c.teamsEnrolled + 1 } : c
-        )
-      );
+      if (enrollCapstone) {
+        enrollCapstone(selectedCapstone.id, enrollForm.teamName);
+      } else {
+        setCapstoneList(prev =>
+          prev.map(c =>
+            c.id === selectedCapstone.id ? { ...c, teamsEnrolled: c.teamsEnrolled + 1 } : c
+          )
+        );
+      }
       showToast(`Team "${enrollForm.teamName}" successfully registered for "${selectedCapstone.title}"! Sandbox provisioned.`, 'success');
     }
     setEnrollModalOpen(false);
@@ -66,20 +70,27 @@ export const CapstoneProjects = () => {
     const tagArray = newChallenge.tagsInput.split(',').map(s => s.trim()).filter(Boolean);
 
     const created = {
-      id: `cap-${Date.now()}`,
       title: newChallenge.title,
       company: newChallenge.company,
       stipend: newChallenge.stipend,
       duration: newChallenge.duration,
       difficulty: newChallenge.difficulty,
-      teamsEnrolled: 1,
       tags: tagArray,
-      mentor: newChallenge.mentor,
-      status: 'Accepting Student Teams'
+      mentor: newChallenge.mentor
     };
 
-    setCapstoneList(prev => [created, ...prev]);
-    showToast(`New Industrial Capstone Challenge "${newChallenge.title}" published to university partners!`, 'success');
+    if (postNewCapstone) {
+      postNewCapstone(created);
+    } else {
+      const newEntry = {
+        id: `cap-${Date.now()}`,
+        ...created,
+        teamsEnrolled: 1,
+        status: 'Accepting Student Teams'
+      };
+      setCapstoneList(prev => [newEntry, ...prev]);
+      showToast(`New Industrial Capstone Challenge "${newChallenge.title}" published to university partners!`, 'success');
+    }
     setProposeModalOpen(false);
   };
 
