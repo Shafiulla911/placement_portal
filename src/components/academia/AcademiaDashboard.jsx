@@ -16,26 +16,14 @@ export const AcademiaDashboard = () => {
   return (
     <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {/* Welcome Banner */}
-      <div
-        className="glass-panel"
-        style={{
-          padding: '28px',
-          background: 'linear-gradient(135deg, rgba(30, 27, 75, 0.7) 0%, rgba(15, 23, 42, 0.9) 60%, rgba(16, 185, 129, 0.2) 100%)',
-          border: '1px solid rgba(99, 102, 241, 0.3)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '20px'
-        }}
-      >
+      <div className="hero-welcome-banner">
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-            <span className="badge badge-indigo">NAAC A++ & AICTE Approved</span>
-            <span className="badge badge-emerald">NEP 2020 Institutional Cell</span>
+            <span className="badge badge-role">NAAC A++ & AICTE Approved</span>
+            <span className="badge badge-role">NEP 2020 Institutional Cell</span>
           </div>
           <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>
-            {academiaData.collegeName}
+            <span className="text-gradient-primary">{academiaData.collegeName}</span>
           </h1>
           <p style={{ color: 'var(--text-secondary)', marginTop: '4px', fontSize: '0.92rem' }}>
             Training & Placement Office (TPO) • Industry-Academia Collaborative Intelligence Portal

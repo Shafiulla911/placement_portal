@@ -56,7 +56,14 @@ export const Navbar = () => {
       <div className="navbar-inner">
         {/* Brand & Problem Statement Title */}
         <div className="navbar-brand">
-          <div className="navbar-logo-icon">
+          <div
+            className="navbar-logo-icon"
+            style={{
+              background: 'var(--role-logo-gradient)',
+              boxShadow: 'var(--role-logo-shadow)',
+              transition: 'all 0.5s ease'
+            }}
+          >
             <Sparkles size={22} color="#ffffff" />
           </div>
           <div className="navbar-brand-text">
@@ -64,7 +71,16 @@ export const Navbar = () => {
               <span className="navbar-brand-name">
                 EduBridge <span className="text-gradient-primary">AI</span>
               </span>
-              <span className="badge badge-indigo navbar-badge-hide-mobile" style={{ fontSize: '0.7rem' }}>
+              <span
+                className="badge navbar-badge-hide-mobile"
+                style={{
+                  fontSize: '0.7rem',
+                  background: 'var(--role-badge-bg)',
+                  color: 'var(--role-badge-color)',
+                  borderColor: 'var(--role-badge-border)',
+                  transition: 'all 0.4s ease'
+                }}
+              >
                 SIH26044 PROTOTYPE
               </span>
             </div>
@@ -86,6 +102,7 @@ export const Navbar = () => {
                   className={`role-pill-btn ${currentRole === 'national' ? 'active' : ''}`}
                   onClick={() => setCurrentRole('national')}
                   title="View as Apex / Ministry"
+                  style={currentRole === 'national' ? { background: 'var(--role-gradient)', borderColor: 'var(--role-border)', color: '#ffffff' } : {}}
                 >
                   <Globe2 size={15} />
                   <span>Apex Directorate</span>
@@ -94,6 +111,7 @@ export const Navbar = () => {
                   className={`role-pill-btn ${currentRole === 'student' ? 'active' : ''}`}
                   onClick={() => setCurrentRole('student')}
                   title="View as Student"
+                  style={currentRole === 'student' ? { background: 'var(--role-gradient)', borderColor: 'var(--role-border)', color: '#ffffff' } : {}}
                 >
                   <GraduationCap size={15} />
                   <span>Student</span>
@@ -102,6 +120,7 @@ export const Navbar = () => {
                   className={`role-pill-btn ${currentRole === 'industry' ? 'active' : ''}`}
                   onClick={() => setCurrentRole('industry')}
                   title="View as Industry Recruiter"
+                  style={currentRole === 'industry' ? { background: 'var(--role-gradient)', borderColor: 'var(--role-border)', color: '#ffffff' } : {}}
                 >
                   <Building2 size={15} />
                   <span>Industry</span>
@@ -110,6 +129,7 @@ export const Navbar = () => {
                   className={`role-pill-btn ${currentRole === 'academia' ? 'active' : ''}`}
                   onClick={() => setCurrentRole('academia')}
                   title="View as College TPO / Dean"
+                  style={currentRole === 'academia' ? { background: 'var(--role-gradient)', borderColor: 'var(--role-border)', color: '#ffffff' } : {}}
                 >
                   <School size={15} />
                   <span>Academia</span>
@@ -118,38 +138,25 @@ export const Navbar = () => {
             </>
           ) : (
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              {currentRole === 'student' && (
-                <div
-                  className="badge badge-indigo"
-                  style={{ padding: '8px 16px', fontSize: '0.85rem', fontWeight: 700, gap: '8px', boxShadow: '0 4px 16px rgba(99, 102, 241, 0.2)' }}
-                >
-                  <GraduationCap size={17} /> Student & Graduate Career Portal
-                </div>
-              )}
-              {currentRole === 'industry' && (
-                <div
-                  className="badge badge-cyan"
-                  style={{ padding: '8px 16px', fontSize: '0.85rem', fontWeight: 700, gap: '8px', boxShadow: '0 4px 16px rgba(6, 182, 212, 0.2)' }}
-                >
-                  <Building2 size={17} /> Enterprise Recruiter & Talent Portal
-                </div>
-              )}
-              {currentRole === 'academia' && (
-                <div
-                  className="badge badge-emerald"
-                  style={{ padding: '8px 16px', fontSize: '0.85rem', fontWeight: 700, gap: '8px', boxShadow: '0 4px 16px rgba(16, 185, 129, 0.2)' }}
-                >
-                  <School size={17} /> Higher Education & TPO Institutional Portal
-                </div>
-              )}
-              {currentRole === 'national' && (
-                <div
-                  className="badge badge-amber"
-                  style={{ padding: '8px 16px', fontSize: '0.85rem', fontWeight: 700, gap: '8px', boxShadow: '0 4px 16px rgba(245, 158, 11, 0.2)' }}
-                >
-                  <Globe2 size={17} /> Apex National Skill Directorate
-                </div>
-              )}
+              <div
+                className="badge"
+                style={{
+                  padding: '8px 16px',
+                  fontSize: '0.85rem',
+                  fontWeight: 700,
+                  gap: '8px',
+                  background: 'var(--role-badge-bg)',
+                  color: 'var(--role-badge-color)',
+                  borderColor: 'var(--role-border)',
+                  boxShadow: '0 4px 16px var(--role-glow-subtle)',
+                  transition: 'all 0.4s ease'
+                }}
+              >
+                {currentRole === 'student' && <><GraduationCap size={17} /> Student & Graduate Career Portal</>}
+                {currentRole === 'industry' && <><Building2 size={17} /> Enterprise Recruiter & Talent Portal</>}
+                {currentRole === 'academia' && <><School size={17} /> Higher Education & TPO Institutional Portal</>}
+                {currentRole === 'national' && <><Globe2 size={17} /> Apex National Skill Directorate</>}
+              </div>
             </div>
           )}
         </div>
@@ -219,7 +226,14 @@ export const Navbar = () => {
           </div>
 
           {/* User Avatar - Desktop */}
-          <div className="navbar-user-chip hide-mobile">
+          <div
+            className="navbar-user-chip hide-mobile"
+            style={{
+              border: '1px solid var(--role-border)',
+              boxShadow: '0 2px 12px var(--role-glow-subtle)',
+              transition: 'all 0.4s ease'
+            }}
+          >
             <img
               src={userDisplay.avatar}
               alt={userDisplay.name}

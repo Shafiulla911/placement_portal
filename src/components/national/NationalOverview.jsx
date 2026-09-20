@@ -22,28 +22,16 @@ export const NationalOverview = () => {
   return (
     <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {/* Header Banner */}
-      <div
-        className="glass-panel"
-        style={{
-          padding: '28px',
-          background: 'linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(15, 23, 42, 0.9) 60%, rgba(6, 182, 212, 0.25) 100%)',
-          border: '1px solid rgba(99, 102, 241, 0.3)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '20px'
-        }}
-      >
+      <div className="hero-welcome-banner">
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-            <span className="badge badge-indigo">
+            <span className="badge badge-role">
               <Globe2 size={13} /> Apex National Oversight
             </span>
-            <span className="badge badge-emerald">Ministry of Ayush & AICTE Co-Initiative</span>
+            <span className="badge badge-role">Ministry of Ayush & AICTE Co-Initiative</span>
           </div>
           <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>
-            National Skill Intelligence & Placement Observatory
+            National Skill Intelligence & <span className="text-gradient-primary">Placement Observatory</span>
           </h1>
           <p style={{ color: 'var(--text-secondary)', marginTop: '4px', fontSize: '0.92rem', maxWidth: '750px' }}>
             Macro-level dashboard aggregating curriculum alignment, district employment indices, and emerging industrial skill demands under NEP 2020.

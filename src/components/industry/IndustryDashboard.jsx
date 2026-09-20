@@ -18,26 +18,14 @@ export const IndustryDashboard = () => {
   return (
     <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {/* Recruiter Welcome Banner */}
-      <div
-        className="glass-panel"
-        style={{
-          padding: '28px',
-          background: 'linear-gradient(135deg, rgba(30, 27, 75, 0.7) 0%, rgba(15, 23, 42, 0.9) 60%, rgba(6, 78, 59, 0.3) 100%)',
-          border: '1px solid rgba(99, 102, 241, 0.3)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '20px'
-        }}
-      >
+      <div className="hero-welcome-banner">
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-            <span className="badge badge-indigo">MoU Accredited Partner</span>
-            <span className="badge badge-emerald">Campus Hiring Drive 2026</span>
+            <span className="badge badge-role">MoU Accredited Partner</span>
+            <span className="badge badge-role">Campus Hiring Drive 2026</span>
           </div>
           <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>
-            Industry Recruiter & Collaboration Command Center
+            Industry Recruiter & Collaboration <span className="text-gradient-primary">Command Center</span>
           </h1>
           <p style={{ color: 'var(--text-secondary)', marginTop: '4px', fontSize: '0.92rem', maxWidth: '700px' }}>
             All India Institute of Ayurveda & Apollo TeleHealth Campus Talent Desk • Filter candidates by verified AICTE/NEP skill credentials.

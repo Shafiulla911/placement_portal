@@ -98,7 +98,14 @@ const AppContent = () => {
   };
 
   return (
-    <div className="app-layout">
+    <div className={`app-layout theme-${currentRole}`} data-role={currentRole}>
+      {/* Dynamic Ambient Role Glows (Matching Login Theme Atmosphere) */}
+      <div className="app-ambient-glows" aria-hidden="true">
+        <div className="app-role-orb app-role-orb-1" />
+        <div className="app-role-orb app-role-orb-2" />
+        <div className="app-role-orb app-role-orb-3" />
+      </div>
+
       <Navbar />
 
       <main className="app-main-container">

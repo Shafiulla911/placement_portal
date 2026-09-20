@@ -22,6 +22,22 @@
   --accent-rose: #f43f5e;
   --accent-violet: #8b5cf6;
 
+  /* Default Active Role CSS Variables (Student Indigo) */
+  --role-primary: #6366f1;
+  --role-primary-light: #818cf8;
+  --role-accent: #4f46e5;
+  --role-gradient: linear-gradient(135deg, #4f46e5, #818cf8);
+  --role-glow: rgba(99, 102, 241, 0.35);
+  --role-glow-subtle: rgba(99, 102, 241, 0.12);
+  --role-border: rgba(99, 102, 241, 0.4);
+  --role-badge-bg: rgba(99, 102, 241, 0.18);
+  --role-badge-color: #c7d2fe;
+  --role-badge-border: rgba(99, 102, 241, 0.35);
+  --role-logo-gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #818cf8);
+  --role-logo-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+  --role-bg-orb1: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
+  --role-bg-orb2: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
+
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
@@ -39,6 +55,88 @@
   --shadow-md: 0 6px 18px -4px rgba(0, 0, 0, 0.55), 0 2px 6px -2px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 16px 36px -8px rgba(0, 0, 0, 0.7), 0 8px 12px -6px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 25px var(--primary-glow);
+}
+
+/* ═══════════════════════════════════════════════════════
+   DYNAMIC ROLE THEMES (STUDENT, INDUSTRY, ACADEMIA, ADMIN)
+   ═══════════════════════════════════════════════════════ */
+
+/* Student Portal Theme */
+.app-layout.theme-student,
+[data-role="student"] {
+  --role-primary: #6366f1;
+  --role-primary-light: #818cf8;
+  --role-accent: #4f46e5;
+  --role-gradient: linear-gradient(135deg, #4f46e5, #818cf8);
+  --role-glow: rgba(99, 102, 241, 0.35);
+  --role-glow-subtle: rgba(99, 102, 241, 0.12);
+  --role-border: rgba(99, 102, 241, 0.4);
+  --role-badge-bg: rgba(99, 102, 241, 0.18);
+  --role-badge-color: #c7d2fe;
+  --role-badge-border: rgba(99, 102, 241, 0.35);
+  --role-logo-gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #818cf8);
+  --role-logo-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+  --role-bg-orb1: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
+  --role-bg-orb2: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
+}
+
+/* Industry Portal Theme */
+.app-layout.theme-industry,
+[data-role="industry"] {
+  --role-primary: #06b6d4;
+  --role-primary-light: #a5f3fc;
+  --role-accent: #0891b2;
+  --role-gradient: linear-gradient(135deg, #0891b2, #06b6d4);
+  --role-glow: rgba(6, 182, 212, 0.35);
+  --role-glow-subtle: rgba(6, 182, 212, 0.12);
+  --role-border: rgba(6, 182, 212, 0.4);
+  --role-badge-bg: rgba(6, 182, 212, 0.18);
+  --role-badge-color: #a5f3fc;
+  --role-badge-border: rgba(6, 182, 212, 0.4);
+  --role-logo-gradient: linear-gradient(135deg, #0891b2, #06b6d4, #38bdf8);
+  --role-logo-shadow: 0 8px 24px rgba(6, 182, 212, 0.55);
+  --role-bg-orb1: radial-gradient(circle, rgba(6, 182, 212, 0.24) 0%, transparent 70%);
+  --role-bg-orb2: radial-gradient(circle, rgba(8, 145, 178, 0.20) 0%, transparent 70%);
+}
+
+/* Academia Portal Theme */
+.app-layout.theme-academia,
+[data-role="academia"] {
+  --role-primary: #10b981;
+  --role-primary-light: #a7f3d0;
+  --role-accent: #059669;
+  --role-gradient: linear-gradient(135deg, #059669, #10b981);
+  --role-glow: rgba(16, 185, 129, 0.35);
+  --role-glow-subtle: rgba(16, 185, 129, 0.12);
+  --role-border: rgba(16, 185, 129, 0.4);
+  --role-badge-bg: rgba(16, 185, 129, 0.18);
+  --role-badge-color: #a7f3d0;
+  --role-badge-border: rgba(16, 185, 129, 0.4);
+  --role-logo-gradient: linear-gradient(135deg, #059669, #10b981, #34d399);
+  --role-logo-shadow: 0 8px 24px rgba(16, 185, 129, 0.55);
+  --role-bg-orb1: radial-gradient(circle, rgba(16, 185, 129, 0.24) 0%, transparent 70%);
+  --role-bg-orb2: radial-gradient(circle, rgba(5, 150, 105, 0.20) 0%, transparent 70%);
+}
+
+/* Admin / National Portal Theme */
+.app-layout.theme-national,
+.app-layout.theme-admin,
+[data-role="national"],
+[data-role="admin"] {
+  --role-primary: #f59e0b;
+  --role-primary-light: #fde68a;
+  --role-accent: #d97706;
+  --role-gradient: linear-gradient(135deg, #d97706, #f59e0b);
+  --role-glow: rgba(245, 158, 11, 0.35);
+  --role-glow-subtle: rgba(245, 158, 11, 0.12);
+  --role-border: rgba(245, 158, 11, 0.4);
+  --role-badge-bg: rgba(245, 158, 11, 0.18);
+  --role-badge-color: #fde68a;
+  --role-badge-border: rgba(245, 158, 11, 0.4);
+  --role-logo-gradient: linear-gradient(135deg, #d97706, #f59e0b, #fbbf24);
+  --role-logo-shadow: 0 8px 24px rgba(245, 158, 11, 0.55);
+  --role-bg-orb1: radial-gradient(circle, rgba(245, 158, 11, 0.24) 0%, transparent 70%);
+  --role-bg-orb2: radial-gradient(circle, rgba(217, 119, 6, 0.20) 0%, transparent 70%);
 }
 
 * {
@@ -142,14 +240,66 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--role-border);
   transform: translateY(-3px) scale(1.004);
-  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.65), 0 0 22px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.65), 0 0 22px var(--role-glow-subtle);
+}
+
+/* Dynamic App Ambient Role Glows */
+.app-layout {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.5s ease;
+}
+
+.app-ambient-glows {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.app-role-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  transition: background 0.8s ease, transform 0.8s ease;
+  will-change: transform;
+}
+
+.app-role-orb-1 {
+  top: -10%;
+  left: 15%;
+  width: 550px;
+  height: 550px;
+  background: var(--role-bg-orb1);
+  animation: floatOrb 20s ease-in-out infinite alternate;
+}
+
+.app-role-orb-2 {
+  bottom: -10%;
+  right: 15%;
+  width: 500px;
+  height: 500px;
+  background: var(--role-bg-orb2);
+  animation: floatOrb 24s ease-in-out infinite alternate-reverse;
+}
+
+.app-role-orb-3 {
+  top: 45%;
+  right: 5%;
+  width: 380px;
+  height: 380px;
+  background: var(--role-bg-orb1);
+  opacity: 0.6;
+  animation: floatOrb 18s ease-in-out infinite alternate;
 }
 
 /* Gradient Texts & Accents */
 .text-gradient-primary {
-  background: linear-gradient(135deg, #c7d2fe 0%, #818cf8 40%, #6366f1 100%);
+  background: var(--role-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -191,14 +341,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  background: var(--role-gradient);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+  box-shadow: 0 4px 14px var(--role-glow);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
-  box-shadow: 0 6px 22px rgba(99, 102, 241, 0.6);
+  filter: brightness(1.08);
+  box-shadow: 0 6px 22px var(--role-glow);
   transform: translateY(-1px);
 }
 
@@ -244,9 +394,51 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-outline-primary {
-  background: rgba(99, 102, 241, 0.05);
-  color: var(--primary-light);
-  border: 1px solid rgba(99, 102, 241, 0.4);
+  background: var(--role-glow-subtle);
+  color: var(--role-primary-light);
+  border: 1px solid var(--role-border);
+}
+
+.btn-outline-primary:hover {
+  background: var(--role-glow);
+  color: #ffffff;
+  border-color: var(--role-primary);
+}
+
+/* Dynamic Hero Welcome Banner */
+.hero-welcome-banner {
+  padding: 28px;
+  background: linear-gradient(135deg, var(--role-glow-subtle) 0%, rgba(15, 23, 42, 0.95) 60%, rgba(10, 16, 32, 0.98) 100%);
+  border: 1px solid var(--role-border);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 25px var(--role-glow-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.hero-welcome-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 10% 20%, var(--role-glow-subtle) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.badge-role {
+  background: var(--role-badge-bg);
+  color: var(--role-badge-color);
+  border: 1px solid var(--role-border);
+  box-shadow: 0 2px 8px var(--role-glow-subtle);
+  transition: all 0.3s ease;
 }
 
 .btn-outline-primary:hover {

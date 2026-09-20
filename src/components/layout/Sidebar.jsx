@@ -59,9 +59,22 @@ export const Sidebar = () => {
           top: '90px'
         }}
       >
-        <div style={{ padding: '0 8px 12px 8px', borderBottom: '1px solid var(--border-subtle)', marginBottom: '12px' }}>
-          <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)', fontWeight: 700 }}>
+        <div style={{ padding: '0 8px 12px 8px', borderBottom: '1px solid var(--border-subtle)', marginBottom: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--role-primary-light)', fontWeight: 700 }}>
             {currentRole.toUpperCase()} WORKSPACE
+          </span>
+          <span
+            style={{
+              fontSize: '0.62rem',
+              padding: '2px 6px',
+              borderRadius: 'var(--radius-full)',
+              background: 'var(--role-badge-bg)',
+              color: 'var(--role-badge-color)',
+              border: '1px solid var(--role-border)',
+              fontWeight: 700
+            }}
+          >
+            ACTIVE
           </span>
         </div>
 
@@ -81,29 +94,36 @@ export const Sidebar = () => {
                   width: '100%',
                   padding: '10px 14px',
                   borderRadius: 'var(--radius-md)',
-                  border: isActive ? '1px solid rgba(99, 102, 241, 0.4)' : '1px solid transparent',
-                  background: isActive ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(139, 92, 246, 0.1) 100%)' : 'transparent',
+                  border: isActive ? '1px solid var(--role-border)' : '1px solid transparent',
+                  background: isActive ? 'linear-gradient(135deg, var(--role-glow-subtle) 0%, rgba(255, 255, 255, 0.02) 100%)' : 'transparent',
+                  boxShadow: isActive ? '0 4px 16px var(--role-glow-subtle)' : 'none',
                   color: isActive ? '#ffffff' : 'var(--text-secondary)',
                   cursor: 'pointer',
                   fontWeight: isActive ? 600 : 500,
                   fontSize: '0.88rem',
                   textAlign: 'left',
-                  transition: 'all 0.2s ease'
+                  transition: 'all 0.25s ease'
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <Icon
                     size={18}
-                    color={isActive ? '#818cf8' : 'currentColor'}
-                    style={{ flexShrink: 0 }}
+                    color={isActive ? 'var(--role-primary-light)' : 'currentColor'}
+                    style={{ flexShrink: 0, transition: 'color 0.25s ease' }}
                   />
                   <span>{item.label}</span>
                 </div>
 
                 {item.badge && (
                   <span
-                    className={item.highlight ? "badge badge-indigo" : "badge badge-emerald"}
-                    style={{ fontSize: '0.65rem', padding: '2px 6px' }}
+                    className="badge"
+                    style={{
+                      fontSize: '0.65rem',
+                      padding: '2px 6px',
+                      background: 'var(--role-badge-bg)',
+                      color: 'var(--role-badge-color)',
+                      borderColor: 'var(--role-border)'
+                    }}
                   >
                     {item.badge}
                   </span>
@@ -112,12 +132,13 @@ export const Sidebar = () => {
                 {item.count !== undefined && !item.badge && (
                   <span
                     style={{
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      color: 'var(--text-secondary)',
+                      background: isActive ? 'var(--role-glow-subtle)' : 'rgba(255, 255, 255, 0.08)',
+                      color: isActive ? 'var(--role-primary-light)' : 'var(--text-secondary)',
                       fontSize: '0.72rem',
                       padding: '2px 7px',
                       borderRadius: 'var(--radius-full)',
-                      fontWeight: 600
+                      fontWeight: 600,
+                      border: isActive ? '1px solid var(--role-border)' : 'none'
                     }}
                   >
                     {item.count}
@@ -134,12 +155,13 @@ export const Sidebar = () => {
             marginTop: '24px',
             padding: '14px',
             borderRadius: 'var(--radius-md)',
-            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(6, 182, 212, 0.05) 100%)',
-            border: '1px solid rgba(99, 102, 241, 0.2)'
+            background: 'linear-gradient(135deg, var(--role-glow-subtle) 0%, rgba(255, 255, 255, 0.02) 100%)',
+            border: '1px solid var(--role-border)',
+            transition: 'all 0.4s ease'
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px' }}>
-            <Flame size={15} className="text-amber-400" color="#f59e0b" />
+            <Flame size={15} color="var(--role-primary-light)" />
             <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#f8fafc' }}>
               SIH District Demo Tip
             </span>
